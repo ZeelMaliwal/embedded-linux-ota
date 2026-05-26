@@ -1,0 +1,6 @@
+*.img
+*.gz
+*.sig
+__pycache__/
+build/
+*.o

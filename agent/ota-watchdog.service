@@ -1,0 +1,13 @@
+[Unit]
+Description=OTA Update Rollback Watchdog
+After=network.target
+ConditionPathExists=/etc/ota-updater/health-check.sh
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/ota-updater/watchdog.py
+TimeoutStartSec=600
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
